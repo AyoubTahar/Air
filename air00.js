@@ -4,7 +4,7 @@ function ArrayToString(arr) {
   for (let i = 2; i < arr.length; i++) {
     if (arr[i] <= 0 || arr[i] >= 0) {
       console.log(`error`);
-      process.exit();
+      process.exit()
     }
     if (phrase !== "") {
       phrase += " ";
