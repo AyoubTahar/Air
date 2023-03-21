@@ -48,19 +48,23 @@ function FoundIndexSep (arr, sep){
 */
 function Split(str, sep) {
   let tableau = StrToArr (str)
-    let NewString = ""
+    let NewArray = [""]
+    let l = 0
     for (let k = 0 ; k < tableau.length ; k++){
-      if (NewString !== "") {
-        NewString += " ";
+      if (NewArray[l] !== "") {
+        NewArray[l] += " ";
       }
       if (tableau[k] !== sep){
-        NewString += tableau[k]
+        NewArray[l] += tableau[k]
       }
       else {
-        NewString += '\n'
+       l++
+       NewArray[l] = ""
       }
     }
-    console.log(NewString) 
+    for(mot of NewArray){
+      console.log(mot)
+    } 
   }
 
 
