@@ -2,7 +2,7 @@ let nodeArray = process.argv;
 function RecupArr(arr) {
     let array = [];
     for (let i = 2; i < arr.length -1; i++) {
-      if (arr[i] <= 0 || arr[i] >= 0) {
+      if (isNaN(arr[i])) {
         console.log(`error`);
         process.exit()
       }
@@ -13,18 +13,19 @@ function RecupArr(arr) {
 function RecupSep (arr){
     let sep = "";
     let i = arr.length-1
+    if (isNaN(arr[i])) {
+        console.log(`error`);
+        process.exit()
+      }
     sep = arr[i]
     return sep
 }
-function Concat (arr, sep){
-        let string = "";
-        for (let i = 0; i < arr.length; i++) {
-          
-          if (string !== "") {
-            string += sep;
-          }
-          string += arr[i];
-        }
-        console.log(string)
+function SumOrSub (arr, sep){
+    let newArr = []
+    for (let i = 0 ; i<arr.length ; i++){
+        newArr[i] = Number(arr[i]) + Number(sep)
+    }
+    console.log(newArr)
 }
-Concat(RecupArr(nodeArray),RecupSep(nodeArray))
+
+SumOrSub(RecupArr(nodeArray),RecupSep(nodeArray))
