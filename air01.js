@@ -46,7 +46,7 @@ function FoundIndexSep (arr, sep){
   return index
 }
 */
-function Split(str, sep) {
+function Split2(str, sep) {
   let tableau = StrToArr (str)
     let NewArray = [""]
     let l = 0
@@ -69,4 +69,4 @@ function Split(str, sep) {
 
 
 
-Split(RecupStr(nodeArray),RecupSep(nodeArray))
+Split2(RecupStr(nodeArray),RecupSep(nodeArray))

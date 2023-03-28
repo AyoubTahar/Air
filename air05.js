@@ -29,3 +29,4 @@ function SumOrSub (arr, sep){
 }
 
 SumOrSub(RecupArr(nodeArray),RecupSep(nodeArray))
+
