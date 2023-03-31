@@ -30,7 +30,6 @@ function QuickSort(arr) {
       k++;
     }
   }
-  console.log(smallerArr, biggerArr)
   return [...QuickSort(smallerArr), pivot, ...QuickSort(biggerArr)]
 }
 

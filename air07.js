@@ -11,13 +11,12 @@ function RecupArr(arr) {
   return array;
 }
 function RecupSep(arr) {
-  if (isNaN(arr[i])) {
-    console.log(`error`);
-    process.exit()
-  }
     let sep = "";
     let i = arr.length - 1;
-  
+    if (isNaN(arr[i])) {
+      console.log(`error`);
+      process.exit()
+    }
     sep = arr[i];
     return sep;
   }
@@ -29,6 +28,7 @@ function sorted_insert (arr, newElement){
                 sortedList += " ";
               }
             sortedList += arr[i] +' '+ newElement
+            i++
         }
         if (arr[i] < newElement && arr[i+1] === undefined) {
             if (sortedList !== "") {
