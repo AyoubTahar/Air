@@ -62,13 +62,16 @@ async function Testexo() {
     promises.push(promise);
   }
   const results = await Promise.allSettled(promises);
+  let totalSuccess = 0
   for (const result of results) {
     if (result.status === "fulfilled") {
+        totalSuccess ++
       console.log("\x1b[32m%s\x1b[0m", result.value);
     } else {
       console.log("\x1b[31m%s\x1b[0m", result.reason);
     }
   }
+  console.log(`Total success : (${totalSuccess}/${promises.length})`)
 }
 
 Testexo();
